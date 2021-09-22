@@ -1,30 +1,83 @@
 ---
-title: "Shell File"
+title: "Shell File: CAnD3 Data Activity"
 author: "Tyler Bruefach"
-date: "9/15/2021"
+date: "9/22/2021"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = F)
 ```
 
-## R Markdown
+***
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+## Reproducing the Analyses
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+### Cleaning Data
+First, run the script named **"Cleaning Data.R"** to complete the following tasks:  
+1. Load required packages for analyses.  
+2. Converting data from the GSS into a tibble.  
+3. Cleaning and coding variables to be used in the analyses.  
+4. Dropping all variables but the ones used in analyses.  
+5. Labeling those variables.  
 
-```{r cars}
-summary(cars)
+```{r, code=xfun::read_utf8('Cleaning Data.R'), include = FALSE}
+
 ```
 
-## Including Plots
+***
 
-You can also embed plots, for example:
+### Handling Missing Data
+Next, you should run the script **"Handing Missing Data.R"**. This script 
+completes the following tasks to handle missing data using listwise deletion:  
+1. Recodes missing values of self-rated health and self-rated mental health (other
+measures were assigned missing values during the cleaning phase).  
+2. Creates an index called "sampmiss" that is a count of how many variables that 
+each respondent has missing values.  
+3. Creates a dataset called "sample" that only contains cases with no missing values.
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r, code=xfun::read_utf8('Handling Missing Data.R'), include = FALSE}
+
+```
+  
+***
+  
+### Producing the Descriptive Table (Table 1)
+The sample is now ready for producing descriptive and inferential statistics. Run
+**"Table 1.R"** to create a descriptive table. This table provides descriptive statistics
+across respondents' sex.
+
+
+```{r, code=xfun::read_utf8('Table 1.R')}
+tbl_1 %>% as_gt()
+```
+  
+***
+
+We find that there are some slight differences in the distribution of mental
+health and education across people identifying as male and female. Male and 
+female respondents had nearly identical distributions of self-rated health. 
+Although female respondents more often had more than a secondary degree than 
+male respondents, they also had lower household income.
+  
+***
+  
+### Producing the Regression Table (Table 2)
+Finally, you should run **"Table 2.R"** to create a table featuring two 
+multivariable regressions. This table provides descriptive statistics
+across respondents' sex.
+
+
+```{r, code=xfun::read_utf8('Table 2.R')}
+tbl_2 %>% as_gt()
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+
+
+
+
+
+
+
