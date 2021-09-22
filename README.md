@@ -41,7 +41,6 @@ Statistics Canada. 2020. General Social Survey, Cycle 31, 2017 [Canada]: Family 
 **File Name**             | **Purpose**
 --------------------------| -------------------------------------------------
 'Shell File.Rmd'          | Calls Scripts to Conduct All Analyses
-'gss_2017.csv'            | Data Used for Analyses
 'Cleaning Data.R'         | Cleans and Codes Variables
 'Handling Missing Data.R' | Uses Listwise Deletion to Create Analytic Sample 
 'Table 1.R'               | Creates Descriptive Table
@@ -50,10 +49,13 @@ Statistics Canada. 2020. General Social Survey, Cycle 31, 2017 [Canada]: Family 
 ***
 
 ### Instructions for Data Preparation and Analysis
-To reproduce the analyses conducted here, download the above files in your 
-working directory. Open and run (knit) the shell file ('Shell File.Rmd'). This 
-file calls on the individual script files to clean the data, manage missing 
-data, and produce the descriptive and regression tables.  
+To reproduce the analyses conducted here, download the zip file of this project. 
+The zip file will create the folder "CAnD3-Data-Activity." This folder will be 
+your working directory. Once you obtain access to the dataset, rename it 
+"gss_2017.csv" and save it the working directory (CAnD3-Data-Activity) Open and 
+run (knit) the shell file ('Shell File.Rmd'). This file calls on the individual 
+script files to clean the data, manage missing data, and produce the descriptive 
+and regression tables.  
 
 ***
 
