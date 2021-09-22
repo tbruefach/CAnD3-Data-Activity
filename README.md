@@ -52,7 +52,7 @@ Statistics Canada. 2020. General Social Survey, Cycle 31, 2017 [Canada]: Family 
 To reproduce the analyses conducted here, download the zip file of this project. 
 The zip file will create the folder "CAnD3-Data-Activity." This folder will be 
 your working directory. Once you obtain access to the dataset, rename it 
-"gss_2017.csv" and save it the working directory (CAnD3-Data-Activity) Open and 
+"gss_2017.csv" and save it in the working directory (CAnD3-Data-Activity). Open and 
 run (knit) the shell file ('Shell File.Rmd'). This file calls on the individual 
 script files to clean the data, manage missing data, and produce the descriptive 
 and regression tables.  
